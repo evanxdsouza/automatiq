@@ -48,12 +48,12 @@
     </nav>
 
     <!-- ───────────────────────── HERO ───────────────────────── -->
-    <section class="hero-bg grid-overlay relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-36">
+    <section id="hero-section" class="hero-bg grid-overlay relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-36">
       <!-- Glowing orbs -->
-      <div class="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-600/30 blur-3xl"></div>
-      <div class="pointer-events-none absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-violet-600/20 blur-3xl"></div>
+      <div id="hero-orb-1" class="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-600/30 blur-3xl"></div>
+      <div id="hero-orb-2" class="pointer-events-none absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-violet-600/20 blur-3xl"></div>
 
-      <div class="relative max-w-6xl mx-auto px-6 text-center">
+      <div id="hero-content" class="relative max-w-6xl mx-auto px-6 text-center">
         <div class="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full border border-brand-500/40 bg-brand-500/10 text-brand-300 text-sm font-medium">
           <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
           Now accepting early access applications
@@ -470,6 +470,72 @@
     <script>
       // Set current year in footer
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // ── Hero Parallax (scroll + mouse) ──────────────────────────────────
+      (function () {
+        const hero    = document.getElementById('hero-section');
+        const orb1    = document.getElementById('hero-orb-1');
+        const orb2    = document.getElementById('hero-orb-2');
+        const content = document.getElementById('hero-content');
+        if (!hero || !orb1 || !orb2 || !content) return;
+
+        // Parallax strengths – how many px each element moves per unit input
+        const ORB1_MOUSE_STRENGTH   =  30;   // px offset at cursor edge (±1)
+        const ORB1_SCROLL_RATE      =  0.25; // fraction of scrollY applied to orb1
+        const ORB2_MOUSE_STRENGTH   = -20;   // negative = moves opposite to cursor
+        const ORB2_SCROLL_RATE      = -0.15; // negative = drifts upward as page scrolls
+        const CONTENT_MOUSE_X       =   8;   // subtle content shift on X axis
+        const CONTENT_MOUSE_Y       =   5;   // subtle content shift on Y axis
+        const LERP_FACTOR           =  0.08; // mouse-smoothing speed (0–1)
+
+        // Current (lerped) and target mouse values, normalised –1 → +1
+        let mouseX = 0, mouseY = 0;
+        let targetX = 0, targetY = 0;
+        let rafId   = null;
+
+        function applyTransforms() {
+          const sy = window.scrollY;
+          // Scroll parallax: orbs drift at different rates as the page scrolls
+          // Mouse parallax : elements shift toward the cursor for a depth effect
+          orb1.style.transform    = `translate(${mouseX * ORB1_MOUSE_STRENGTH}px, ${sy * ORB1_SCROLL_RATE + mouseY * ORB1_MOUSE_STRENGTH}px)`;
+          orb2.style.transform    = `translate(${mouseX * ORB2_MOUSE_STRENGTH}px, ${sy * ORB2_SCROLL_RATE + mouseY * ORB2_MOUSE_STRENGTH}px)`;
+          content.style.transform = `translate(${mouseX * CONTENT_MOUSE_X}px, ${mouseY * CONTENT_MOUSE_Y}px)`;
+        }
+
+        function loop() {
+          // Smooth lerp toward target mouse position
+          mouseX += (targetX - mouseX) * LERP_FACTOR;
+          mouseY += (targetY - mouseY) * LERP_FACTOR;
+          applyTransforms();
+          // Keep looping until values have settled
+          const settled =
+            Math.abs(targetX - mouseX) < 0.001 &&
+            Math.abs(targetY - mouseY) < 0.001;
+          rafId = settled ? null : requestAnimationFrame(loop);
+        }
+
+        function scheduleLoop() {
+          if (!rafId) rafId = requestAnimationFrame(loop);
+        }
+
+        // Scroll parallax – no lerp needed, apply directly
+        window.addEventListener('scroll', applyTransforms, { passive: true });
+
+        // Mouse parallax – normalise cursor to –1 / +1 within the hero
+        hero.addEventListener('mousemove', function (e) {
+          const r = hero.getBoundingClientRect();
+          targetX = ((e.clientX - r.left) / r.width)  * 2 - 1;
+          targetY = ((e.clientY - r.top)  / r.height) * 2 - 1;
+          scheduleLoop();
+        });
+
+        // Return to centre when the cursor leaves
+        hero.addEventListener('mouseleave', function () {
+          targetX = 0;
+          targetY = 0;
+          scheduleLoop();
+        });
+      }());
 
       // Waitlist form submission
       async function handleSubmit(event) {

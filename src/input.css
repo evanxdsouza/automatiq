@@ -45,4 +45,11 @@
   transform: translateY(-4px);
 }
 
+/* Hero parallax: hint the browser to promote these to their own compositor layers */
+#hero-orb-1,
+#hero-orb-2,
+#hero-content {
+  will-change: transform;
+}
+
 html { scroll-behavior: smooth; }
