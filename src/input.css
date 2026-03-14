@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f0f4ff;
+  --color-brand-100: #dce6ff;
+  --color-brand-200: #b9ceff;
+  --color-brand-300: #88aaff;
+  --color-brand-400: #547bff;
+  --color-brand-500: #2d50ff;
+  --color-brand-600: #1530f5;
+  --color-brand-700: #1120d8;
+  --color-brand-800: #1420ae;
+  --color-brand-900: #162189;
+  --color-brand-950: #111453;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Animated gradient background for hero */
+.hero-bg {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Grid pattern overlay */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Feature card hover effect */
+.feature-card {
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  box-shadow: 0 0 0 1px rgba(45, 80, 255, 0.3), 0 8px 32px rgba(45, 80, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+html { scroll-behavior: smooth; }

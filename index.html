@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automatiq — AI Agents That Work For You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/output.css" />
+  </head>
+  <body class="bg-gray-950 text-white font-sans antialiased">
+
+    <!-- ───────────────────────── NAV ───────────────────────── -->
+    <nav class="fixed top-0 inset-x-0 z-50 bg-gray-950/80 backdrop-blur border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2 font-bold text-xl tracking-tight">
+          <!-- Simple lightning bolt logo mark -->
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-500">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+            </svg>
+          </span>
+          Automatiq
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm text-gray-400 font-medium">
+          <a href="#features" class="hover:text-white transition-colors">Features</a>
+          <a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a>
+          <a href="#use-cases" class="hover:text-white transition-colors">Use Cases</a>
+        </div>
+
+        <a
+          href="#waitlist"
+          class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold transition-colors"
+        >
+          Join Waitlist
+        </a>
+
+        <!-- Mobile menu button (no JS needed — just scroll) -->
+        <a href="#waitlist" class="md:hidden text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors">
+          Join Waitlist
+        </a>
+      </div>
+    </nav>
+
+    <!-- ───────────────────────── HERO ───────────────────────── -->
+    <section class="hero-bg grid-overlay relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-36">
+      <!-- Glowing orbs -->
+      <div class="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-brand-600/30 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-violet-600/20 blur-3xl"></div>
+
+      <div class="relative max-w-6xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full border border-brand-500/40 bg-brand-500/10 text-brand-300 text-sm font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+          Now accepting early access applications
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-white">
+          AI Agents That<br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-violet-400">
+            Actually Work
+          </span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed">
+          Automatiq builds intelligent AI agents tailored to your business — automating
+          workflows, cutting costs, and scaling your operations without adding headcount.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="#waitlist"
+            class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-lg transition-all shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50"
+          >
+            Join the Waitlist →
+          </a>
+          <a
+            href="#how-it-works"
+            class="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/20 hover:border-white/40 text-white font-semibold text-lg transition-colors"
+          >
+            See How It Works
+          </a>
+        </div>
+
+        <!-- Social proof bar -->
+        <div class="mt-16 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9 12l2 2 4-4m5 4a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            No code required
+          </span>
+          <span class="text-gray-700">|</span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9 12l2 2 4-4m5 4a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Deploys in days, not months
+          </span>
+          <span class="text-gray-700">|</span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9 12l2 2 4-4m5 4a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Enterprise-grade security
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── FEATURES ───────────────────────── -->
+    <section id="features" class="py-24 bg-gray-950">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold uppercase tracking-widest text-brand-400 mb-3">Capabilities</p>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white">Everything you need to automate</h2>
+          <p class="mt-4 text-gray-400 text-lg max-w-xl mx-auto">
+            Our agents are purpose-built for real business outcomes — not just demos.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="feature-card rounded-2xl bg-gray-900 border border-white/5 p-7">
+            <div class="w-11 h-11 rounded-xl bg-brand-500/15 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Instant Automation</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Deploy AI agents that instantly execute multi-step workflows across your tools — no manual intervention needed.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feature-card rounded-2xl bg-gray-900 border border-white/5 p-7">
+            <div class="w-11 h-11 rounded-xl bg-violet-500/15 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Intelligent Document Processing</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Extract, classify, and act on data from PDFs, emails, and forms with near-human accuracy.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feature-card rounded-2xl bg-gray-900 border border-white/5 p-7">
+            <div class="w-11 h-11 rounded-xl bg-emerald-500/15 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Conversational AI Agents</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Customer-facing chat agents that handle support, sales, and onboarding — available 24/7.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feature-card rounded-2xl bg-gray-900 border border-white/5 p-7">
+            <div class="w-11 h-11 rounded-xl bg-amber-500/15 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Data & Analytics Pipelines</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Continuously gather, clean, and surface insights from your data — fully automated and always up to date.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="feature-card rounded-2xl bg-gray-900 border border-white/5 p-7">
+            <div class="w-11 h-11 rounded-xl bg-pink-500/15 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Secure & Compliant</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              SOC 2-ready infrastructure with fine-grained access controls, audit logs, and GDPR compliance built in.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="feature-card rounded-2xl bg-gray-900 border border-white/5 p-7">
+            <div class="w-11 h-11 rounded-xl bg-cyan-500/15 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-white mb-2">Deep Integrations</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Connects natively with Slack, Salesforce, HubSpot, Notion, Google Workspace, and 100+ other tools.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── HOW IT WORKS ───────────────────────── -->
+    <section id="how-it-works" class="py-24 bg-gray-900/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold uppercase tracking-widest text-brand-400 mb-3">Process</p>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white">Up and running in three steps</h2>
+          <p class="mt-4 text-gray-400 text-lg max-w-xl mx-auto">
+            We handle the complexity so you can focus on results.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <!-- Connector line (desktop only) -->
+          <div class="hidden md:block absolute top-10 left-1/3 right-1/3 h-px bg-gradient-to-r from-brand-500/50 to-violet-500/50"></div>
+
+          <!-- Step 1 -->
+          <div class="text-center px-4">
+            <div class="w-20 h-20 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center mx-auto mb-6">
+              <span class="text-brand-400 font-extrabold text-2xl">01</span>
+            </div>
+            <h3 class="font-bold text-xl text-white mb-3">Discovery Call</h3>
+            <p class="text-gray-400 leading-relaxed">
+              We map your workflows, identify automation opportunities, and design a bespoke agent architecture for your business.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center px-4">
+            <div class="w-20 h-20 rounded-2xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center mx-auto mb-6">
+              <span class="text-violet-400 font-extrabold text-2xl">02</span>
+            </div>
+            <h3 class="font-bold text-xl text-white mb-3">Build & Integrate</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Our team builds and tests your agents, integrating them with your existing stack with zero disruption to your operations.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center px-4">
+            <div class="w-20 h-20 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-6">
+              <span class="text-emerald-400 font-extrabold text-2xl">03</span>
+            </div>
+            <h3 class="font-bold text-xl text-white mb-3">Launch & Optimize</h3>
+            <p class="text-gray-400 leading-relaxed">
+              Deploy to production, monitor performance, and continuously improve your agents as your business evolves.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── USE CASES ───────────────────────── -->
+    <section id="use-cases" class="py-24 bg-gray-950">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="text-sm font-semibold uppercase tracking-widest text-brand-400 mb-3">Industries</p>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white">Built for every team</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Use case 1 -->
+          <div class="rounded-2xl bg-gradient-to-br from-brand-900/40 to-brand-950/20 border border-brand-500/20 p-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-brand-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-white mb-2">Sales & Revenue Ops</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Lead qualification, CRM enrichment, outreach sequences, and pipeline reporting — all automated, all accurate.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use case 2 -->
+          <div class="rounded-2xl bg-gradient-to-br from-violet-900/40 to-violet-950/20 border border-violet-500/20 p-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-white mb-2">Customer Support</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Resolve Tier-1 tickets automatically, escalate intelligently, and give your support team their time back.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use case 3 -->
+          <div class="rounded-2xl bg-gradient-to-br from-emerald-900/40 to-emerald-950/20 border border-emerald-500/20 p-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-white mb-2">Finance & Compliance</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Invoice processing, expense categorization, audit trails, and regulatory reporting without the manual overhead.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use case 4 -->
+          <div class="rounded-2xl bg-gradient-to-br from-amber-900/40 to-amber-950/20 border border-amber-500/20 p-8">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-white mb-2">Engineering & DevOps</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Automate code reviews, incident triage, release notes, and on-call runbooks to ship faster with fewer issues.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── WAITLIST ───────────────────────── -->
+    <section id="waitlist" class="py-24 bg-gray-900/50">
+      <div class="max-w-2xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-brand-500/40 bg-brand-500/10 text-brand-300 text-sm font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+            Early Access — Limited Spots
+          </span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white">Get early access</h2>
+          <p class="mt-4 text-gray-400 text-lg">
+            Join the waitlist and be first to automate your business with Automatiq. Early members get priority onboarding and founder pricing.
+          </p>
+        </div>
+
+        <!-- Waitlist form -->
+        <form
+          id="waitlist-form"
+          onsubmit="handleSubmit(event)"
+          class="rounded-2xl bg-gray-900 border border-white/10 p-8 shadow-xl"
+        >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="first-name" class="block text-sm font-medium text-gray-300 mb-1.5">First name</label>
+              <input
+                id="first-name"
+                name="first_name"
+                type="text"
+                required
+                placeholder="Jane"
+                class="w-full rounded-lg bg-gray-800 border border-white/10 text-white placeholder-gray-500 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+              />
+            </div>
+            <div>
+              <label for="last-name" class="block text-sm font-medium text-gray-300 mb-1.5">Last name</label>
+              <input
+                id="last-name"
+                name="last_name"
+                type="text"
+                required
+                placeholder="Smith"
+                class="w-full rounded-lg bg-gray-800 border border-white/10 text-white placeholder-gray-500 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+              />
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-1.5">Work email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="jane@company.com"
+              class="w-full rounded-lg bg-gray-800 border border-white/10 text-white placeholder-gray-500 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="company" class="block text-sm font-medium text-gray-300 mb-1.5">Company name</label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              placeholder="Acme Corp"
+              class="w-full rounded-lg bg-gray-800 border border-white/10 text-white placeholder-gray-500 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label for="use-case" class="block text-sm font-medium text-gray-300 mb-1.5">What would you like to automate?</label>
+            <select
+              id="use-case"
+              name="use_case"
+              class="w-full rounded-lg bg-gray-800 border border-white/10 text-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition appearance-none"
+            >
+              <option value="" class="bg-gray-800">Select a use case…</option>
+              <option value="sales" class="bg-gray-800">Sales &amp; Revenue Ops</option>
+              <option value="support" class="bg-gray-800">Customer Support</option>
+              <option value="finance" class="bg-gray-800">Finance &amp; Compliance</option>
+              <option value="engineering" class="bg-gray-800">Engineering &amp; DevOps</option>
+              <option value="other" class="bg-gray-800">Other</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-base transition-all shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40"
+          >
+            Reserve My Spot
+          </button>
+
+          <p class="mt-4 text-center text-xs text-gray-500">
+            No spam, ever. Unsubscribe at any time.
+          </p>
+        </form>
+
+        <!-- Success state (hidden by default) -->
+        <div id="waitlist-success" class="hidden rounded-2xl bg-gray-900 border border-emerald-500/30 p-10 text-center shadow-xl">
+          <div class="w-16 h-16 rounded-full bg-emerald-500/15 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-extrabold text-white mb-3">You're on the list! 🎉</h3>
+          <p class="text-gray-400">
+            Thanks for joining! We'll be in touch with your early access invite very soon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── FOOTER ───────────────────────── -->
+    <footer class="py-12 bg-gray-950 border-t border-white/5">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <a href="#" class="flex items-center gap-2 font-bold text-lg tracking-tight text-white">
+          <span class="inline-flex items-center justify-center w-7 h-7 rounded-md bg-brand-500">
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+            </svg>
+          </span>
+          Automatiq
+        </a>
+
+        <p class="text-gray-500 text-sm">
+          © <span id="year"></span> Automatiq. All rights reserved.
+        </p>
+
+        <div class="flex items-center gap-6 text-sm text-gray-500">
+          <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
+          <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
+          <a href="mailto:hello@automatiq.ai" class="hover:text-gray-300 transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Set current year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Waitlist form submission
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const btn = document.getElementById('submit-btn');
+        btn.disabled = true;
+        btn.textContent = 'Submitting…';
+
+        // Simulate a short async operation (replace with real API call)
+        setTimeout(function () {
+          document.getElementById('waitlist-form').classList.add('hidden');
+          document.getElementById('waitlist-success').classList.remove('hidden');
+        }, 800);
+      }
+    </script>
+  </body>
+</html>
